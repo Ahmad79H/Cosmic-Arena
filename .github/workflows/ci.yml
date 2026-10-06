@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  test:
+  test-and-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
           cache: true
 
       - name: Ensure platform folders
-        run: flutter create . --platforms=android --project-name cosmic_arena
+        run: flutter create . --project-name cosmic_arena
 
       - name: Dependencies
         run: flutter pub get
@@ -31,7 +31,15 @@ jobs:
       - name: Build debug APK
         run: flutter build apk --debug
 
+      - name: Build web
+        run: flutter build web --release
+
       - uses: actions/upload-artifact@v4
         with:
-          name: app-debug
+          name: app-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web

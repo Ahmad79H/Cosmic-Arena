@@ -5,8 +5,7 @@ version: 0.1.0+1
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
-
-flutter: '>=3.24.0'
+  flutter: '>=3.24.0'
 
 dependencies:
   flutter:
@@ -14,14 +13,12 @@ dependencies:
   flame: ^1.18.0
   flame_audio: ^2.10.0
   flutter_animate: ^4.5.0
-  dotlottie_flutter: ^0.0.3
-  render: ^2.0.0
+  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
-  flame_test: ^1.18.0
 
 flutter:
   uses-material-design: true
