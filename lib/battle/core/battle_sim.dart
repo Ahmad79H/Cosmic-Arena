@@ -46,7 +46,7 @@ class BattleEvent {
 }
 
 class BattleSim {
-  BattleSim({required this.a, required this.b, required int seed, this.timeCapTicks = 60 * 45})
+  BattleSim({required this.a, required this.b, required this.seed, this.timeCapTicks = 60 * 45})
       : _rng = Random(seed);
 
   final EntityState a;
